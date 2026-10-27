@@ -2,15 +2,14 @@ services:
   - type: web
     name: pawfect-homes
     runtime: node
-    plan: free            # free = data may reset. For permanent data use a paid plan + disk below.
+    plan: free
     buildCommand: echo "no build needed"
     startCommand: node server.js
     healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
         value: 20
-    # disk:                 # <- uncomment (needs a paid plan) so users/pets survive restarts
-    #   name: pawfect-data
-    #   mountPath: /var/data
-    #   sizeGB: 1
-    # and add env var DATA_DIR=/var/data
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
