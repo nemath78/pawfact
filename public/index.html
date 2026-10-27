@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pawfect Homes – Proud to be a pet adopter</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8d3c2;--sheet:#fffaf5;--card:#fff;--ink:#2b2430;--mute:#9a8f98;--acc:#f5a84b;--acc2:#ffd98a;--line:#f1e5dc;--red:#ff5a5f;--sh:0 8px 24px rgba(214,150,110,.25);box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#3a2a2e;--sheet:#2a2230;--card:#383042;--ink:#fbeee6;--mute:#b5a6b2;--line:#483d52;--sh:0 8px 24px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#3a2a2e;--sheet:#2a2230;--card:#383042;--ink:#fbeee6;--mute:#b5a6b2;--line:#483d52;--sh:0 8px 24px rgba(0,0,0,.35);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',ui-rounded,system-ui,sans-serif;line-height:1.45}
+h1,h2,h3,.fr{font-family:'Fredoka',ui-rounded,system-ui,sans-serif}
+h1,h2,h3{margin:0}
+.phone{max-width:430px;margin:0 auto;min-height:100vh;background:var(--sheet);position:relative;padding:calc(18px + env(safe-area-inset-top,0px)) 16px 110px;overflow:hidden}
+@media(min-width:500px){.phone{margin:20px auto;min-height:calc(100vh - 40px);border-radius:36px;box-shadow:var(--sh)}}
+button{font:inherit;cursor:pointer;border:0;color:inherit;background:none}
+.mute{color:var(--mute);font-size:.85rem}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.top h2{font-size:1.6rem;line-height:1.15;margin-top:2px}
+.ic{width:44px;height:44px;border-radius:50%;background:var(--card);box-shadow:var(--sh);font-size:1.1rem;display:grid;place-items:center;font-weight:800}
+.search{display:flex;gap:8px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:4px 16px;margin:16px 0}
+.search input{flex:1;border:0;outline:0;background:none;color:var(--ink);font:inherit;padding:10px 0;min-width:0}
+.rw{display:flex;justify-content:space-between;align-items:center;margin:8px 0}
+.cats{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 12px}
+.ct{flex:none;width:72px;text-align:center;font-weight:800;font-size:.8rem}
+.ct i{display:grid;place-items:center;width:72px;height:72px;border-radius:20px;font-style:normal;font-size:2rem;border:3px solid transparent;margin-bottom:4px}
+.ct.on i{border-color:var(--ink);transform:scale(1.05)}
+.pills{display:flex;gap:8px;margin:2px 0 14px;flex-wrap:wrap}
+.pill{padding:7px 14px;border-radius:999px;background:var(--card);border:2px solid var(--line);font-weight:800;font-size:.85rem}
+.pill.on{background:var(--acc);border-color:var(--acc);color:#3b2a10}
+.car{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px}
+.pc{flex:none;width:76%;scroll-snap-align:center;position:relative;border-radius:30px;overflow:hidden;box-shadow:var(--sh);cursor:pointer}
+.art{height:300px;background-size:cover;background-position:center;position:relative;display:grid;place-items:center;overflow:hidden}
+.blob{position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.45)}
+.blob:before,.blob:after{content:"";position:absolute;border-radius:50%;background:var(--acc);opacity:.5;width:10px;height:10px;top:30px;right:20px}
+.blob:after{width:7px;height:7px;top:150px;left:10px;right:auto;background:#7a8cff}
+.em{position:relative;font-size:7rem;filter:drop-shadow(0 8px 6px rgba(0,0,0,.12))}
+.hrt{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:#fff;color:#d9cfd6;font-size:1.2rem;box-shadow:var(--sh)}
+.hrt.on{color:var(--red)}
+.pi{position:absolute;left:10px;right:10px;bottom:10px;background:var(--card);border-radius:22px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.g{width:36px;height:36px;border-radius:50%;background:var(--acc2);display:grid;place-items:center;font-weight:800;color:#5a3a10}
+.tag{font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:999px;background:#d6f0e2;color:#24503c}
+.tag.sell{background:#ffd9c2;color:#6b3a1a}
+.empty{padding:40px 10px;text-align:center;color:var(--mute);width:100%}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:var(--card);display:flex;justify-content:space-around;align-items:center;padding:10px 8px calc(10px + env(safe-area-inset-bottom,0px));border-radius:26px 26px 0 0;box-shadow:0 -6px 24px rgba(214,150,110,.2);z-index:20}
+.nav button{font-size:1.4rem;opacity:.45;padding:6px 12px}
+.nav button.on{opacity:1}
+.nav .plus{background:var(--acc);opacity:1;width:52px;height:52px;border-radius:50%;color:#3b2a10;font-weight:800;box-shadow:var(--sh);margin-top:-26px;padding:0}
+.det .art{height:280px;border-radius:30px}
+.back{position:absolute;top:14px;left:14px;width:40px;height:40px;border-radius:50%;background:#fff;color:#2b2430;box-shadow:var(--sh);font-weight:800}
+.stats{display:flex;background:#fff3d6;border-radius:18px;padding:12px;margin:14px 0;text-align:center;color:#3b2a10}
+.stats div{flex:1}.stats div+div{border-left:2px solid #f2dca8}
+.own{display:flex;gap:12px;align-items:center;margin:12px 0}
+.av{width:44px;height:44px;border-radius:50%;background:var(--acc2);display:grid;place-items:center;font-weight:800;color:#5a3a10}
+.cta{display:flex;gap:10px;align-items:center;margin-top:14px}
+.big{flex:1;background:var(--acc);color:#3b2a10;border-radius:999px;padding:14px;font-weight:800;box-shadow:var(--sh)}
+.rnd{width:48px;height:48px;border-radius:50%;border:2px solid #9bb5ff;background:var(--card)}
+.rnd.p{border-color:#ffb3bd}
+.card2{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:12px 14px;margin:10px 0}
+input.f,select.f,textarea.f{font:inherit;width:100%;padding:11px 14px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);margin:4px 0}
+.modal{position:fixed;inset:0;background:rgba(40,20,30,.5);display:none;align-items:flex-end;justify-content:center;z-index:50}
+.modal.open{display:flex}
+.box{background:var(--sheet);border-radius:28px 28px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px));width:100%;max-width:430px;max-height:92vh;overflow:auto}
+.r2{display:flex;gap:8px}.r2>*{flex:1}
+.w1{background:linear-gradient(#fbe9d8,#fffaf5);margin:-18px -16px 0;padding:calc(24px + env(safe-area-inset-top,0px)) 16px 10px;height:330px;position:relative}
+.tl{position:absolute;width:130px;height:130px;border-radius:30px;display:grid;place-items:center;font-size:4rem;box-shadow:var(--sh)}
+.w2{text-align:center;padding:30px 10px}
+.w2 h1{font-size:2.1rem;line-height:1.15;margin:14px 0 8px}
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:var(--ink);color:var(--sheet);padding:10px 18px;border-radius:999px;font-weight:700;z-index:99;display:none;max-width:90%;text-align:center}
+.cr{text-align:center;color:var(--mute);margin:22px 0 0;font-size:.85rem}.cr b{color:var(--acc)}
+</style></head><body>
+<div class="phone"><main id="scr"></main></div>
+<div class="nav" id="nav"></div>
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="mAuth"><div class="box"><h3 id="aT">Welcome back 🐱</h3>
+<input class="f" id="aN" placeholder="Your name" style="display:none"><input class="f" id="aE" type="email" placeholder="Email"><input class="f" id="aP" type="password" placeholder="Password (8+ characters)">
+<p class="mute">🔒 Your password is hashed on our server (scrypt) and never stored as plain text.</p>
+<p id="aErr" style="color:#d6456b;margin:0"></p>
+<div class="r2"><button class="big" onclick="auth()" id="aGo">Sign in</button><button class="big" style="background:var(--card);border:2px solid var(--line);box-shadow:none" onclick="closeM('mAuth')">Cancel</button></div>
+<p style="text-align:center"><a href="#" onclick="flip();return false" id="aSw" style="color:var(--acc);font-weight:800">New here? Create account</a></p></div></div>
+
+<div class="modal" id="mPost"><div class="box"><h3>Rehome a pet 🏡</h3>
+<input class="f" id="pN" placeholder="Pet’s name"><div class="r2"><select class="f" id="pC"></select><select class="f" id="pG"><option value="m">♂ Boy</option><option value="f">♀ Girl</option></select></div>
+<div class="r2"><input class="f" id="pA" placeholder="Age (e.g. 2 Years)"><input class="f" id="pW" placeholder="Weight (e.g. 4 Kg)"></div>
+<div class="r2"><select class="f" id="pT"><option value="adopt">Free adoption</option><option value="sell">For sale</option></select><input class="f" id="pPr" placeholder="Price"></div>
+<input class="f" id="pL" placeholder="City / country"><textarea class="f" id="pD" rows="3" placeholder="Their story and why they need a new home…"></textarea>
+<input class="f" type="file" id="pF" accept="image/*">
+<p id="pErr" style="color:#d6456b;margin:0"></p>
+<div class="r2"><button class="big" onclick="savePet()">Post</button><button class="big" style="background:var(--card);border:2px solid var(--line);box-shadow:none" onclick="closeM('mPost')">Cancel</button></div></div></div>
+
+<div class="modal" id="mMsg"><div class="box"><h3>Message the owner 💌</h3><p class="mute">They’ll see your name and email so they can reply.</p>
+<textarea class="f" id="mT" rows="4" maxlength="500" placeholder="Hi! I’d love to give them a home because…"></textarea>
+<p id="mErr" style="color:#d6456b;margin:0"></p>
+<div class="r2"><button class="big" onclick="sendMsg()">Send</button><button class="big" style="background:var(--card);border:2px solid var(--line);box-shadow:none" onclick="closeM('mMsg')">Cancel</button></div></div></div>
+
+<script>
+const CATS={cat:['🐱','Cats','#ffe3b8'],dog:['🐶','Dogs','#cfe0ff'],rabbit:['🐰','Rabbits','#fbd6dc'],bird:['🐦','Birds','#fff0a8'],other:['🐹','Others','#d6f0e2']};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ld=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}};
+let me=null,favs=[],pets=[],posts=[],inbox=[];
+let v=ld('pp2_seen',false)?'home':'welcome',cat='all',typ='all',q='',sel=null,cc='cat',signup=false,msgPet=null;
+async function api(p,m='GET',b){let r;try{r=await fetch('/api'+p,{method:m,headers:{'Content-Type':'application/json'},body:b?JSON.stringify(b):undefined,credentials:'same-origin'})}catch(e){throw new Error('Can’t reach the server – check your connection')}const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||'Something went wrong');return j}
+const CR='<p class="cr">Made with 💗 by <b>Nemath</b> &amp; <b>Tanaaz</b></p>';
+function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',2400)}
+function artOf(p,extra=''){return `<div class="art" style="background-color:${CATS[p.c][2]}${p.img?`;background-image:url(${p.img})`:''}">${p.img?'':'<span class="blob"></span><span class="em">'+CATS[p.c][0]+'</span>'}${extra}</div>`}
+function heart(p){return `<button class="hrt ${favs.includes(p.id)?'on':''}" onclick="event.stopPropagation();fav('${p.id}')">♥</button>`}
+function card(p){return `<div class="pc" onclick="openPet('${p.id}')">${artOf(p,heart(p))}<div class="pi"><div><b class="fr">${esc(p.n)}</b> <span class="tag ${p.t}">${p.t=='sell'?esc(p.p||'For sale'):'Adopt'}</span><div class="mute">📍 ${esc(p.l)}</div></div><span class="g">${p.g=='m'?'♂':'♀'}</span></div></div>`}
+function list(){const s=q.toLowerCase();return pets.filter(p=>(cat=='all'||p.c==cat)&&(typ=='all'||p.t==typ)&&(!s||(p.n+p.l+p.d).toLowerCase().includes(s)))}
+function drawCards(){$('car').innerHTML=list().map(card).join('')||'<div class="empty">No pets here yet 🌱<br>Be the first to post!</div>'}
+function chips(){return `<div class="cats"><div class="ct ${cat=='all'?'on':''}" onclick="cat='all';show()"><i style="background:#ffe9c7">🌈</i>All</div>${Object.entries(CATS).map(([k,x])=>`<div class="ct ${cat==k?'on':''}" onclick="cat='${k}';show()"><i style="background:${x[2]}">${x[0]}</i>${x[1]}</div>`).join('')}</div>`}
+const V={
+ welcome(){return `<div class="w1"><div class="tl" style="background:#fbd6dc;left:22px;top:30px;transform:rotate(-8deg)">🐶</div><div class="tl" style="background:#ffe3b8;right:22px;top:20px;transform:rotate(8deg)">🐱</div><div class="tl" style="background:#cfe0ff;left:105px;top:165px;transform:rotate(-4deg)">🐰</div></div>
+ <div class="w2"><h1>Proud to Be A<br>Pet Adopter</h1><p class="mute">Moving away or can’t care for a pet? Give them a loving home instead of the street. 🔒 Safe, encrypted sign-in.</p><button class="big" style="width:100%;margin-top:14px" onclick="start()">Get Started 🐾</button>${CR}</div>`},
+ home(){return `<div class="top"><div><div class="mute">Hello ${me?esc(me.name):'friend'} 👋</div><h2 class="fr">Find a new<br>best friend</h2></div><button class="ic" onclick="nav('me')">${me?esc(me.name[0].toUpperCase()):'👤'}</button></div>
+ <div class="search"><span>🔍</span><input placeholder="Search pets or city" value="${esc(q)}" oninput="q=this.value;drawCards()"></div>
+ <div class="rw"><b class="fr">Categories</b></div>${chips()}
+ <div class="pills">${[['all','All'],['adopt','💛 Adoption'],['sell','🏷️ For sale']].map(([k,l])=>`<button class="pill ${typ==k?'on':''}" onclick="typ='${k}';show()">${l}</button>`).join('')}</div>
+ <div class="car" id="car"></div>${CR}`},
+ detail(){const p=pets.find(x=>x.id==sel);if(!p)return'';return `<div class="det">${artOf(p,'<button class="back" onclick="nav(\'home\')">←</button>'+heart(p))}
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><div><h2 class="fr">${esc(p.n)}</h2><div class="mute">📍 ${esc(p.l)}</div></div><span class="g" style="width:44px;height:44px">${p.g=='m'?'♂':'♀'}</span></div>
+ <div class="own"><div class="av">${esc((p.by||'?')[0].toUpperCase())}</div><div style="flex:1"><b>${esc(p.by)}</b><div class="mute">Pet owner</div></div><span class="mute">${fmt(p.dt)}</span></div>
+ <div class="stats"><div><div class="mute">Age</div><b>${esc(p.a||'–')}</b></div><div><div class="mute">Weight</div><b>${esc(p.w||'–')}</b></div><div><div class="mute">${p.t=='sell'?'Price':'Cost'}</div><b>${p.t=='sell'?esc(p.p||'Ask'):'Free'}</b></div></div>
+ <p class="mute" style="font-size:.95rem">${esc(p.d)||'A lovely pet looking for a loving home.'}</p>
+ <div class="cta"><button class="big" onclick="contact('${p.id}')">${p.t=='sell'?'Buy':'Adoption'} 🐾</button><button class="rnd" onclick="contact('${p.id}')">📞</button><button class="rnd p" onclick="contact('${p.id}')">💬</button></div></div>`},
+ chat(){const P=posts.filter(p=>p.c==cc);return `<h2 class="fr">Community 🌷</h2><p class="mute">Pick a space, share tips or celebrate a new home.</p>
+ <div class="cats" style="gap:8px">${Object.entries(CATS).map(([k,x])=>`<button class="pill ${cc==k?'on':''}" style="flex:none" onclick="cc='${k}';show()">${x[0]} ${x[1]}</button>`).join('')}</div>
+ ${P.map(p=>`<div class="card2"><b>${esc(p.u)}</b><br>${esc(p.x)}</div>`).join('')||'<div class="empty">Quiet here – start the conversation 🌼</div>'}
+ <textarea class="f" id="pt" rows="2" placeholder="Say something kind…"></textarea><button class="big" style="width:100%;margin-top:6px" onclick="addPost()">Share</button>`},
+ favs(){const L=pets.filter(p=>favs.includes(p.id));return `<h2 class="fr">Favourites ♥</h2><div style="margin-top:14px;display:grid;gap:14px">${L.map(card).map(c=>c.replace('class="pc"','class="pc" style="width:100%"')).join('')||'<div class="empty">Tap the heart on a pet to save them here.</div>'}</div>`},
+ me(){if(!me)return `<div class="w2"><div class="em" style="font-size:4rem">🐾</div><h2 class="fr">Join Pawfect Homes</h2><p class="mute">Sign in to post a pet, chat and save favourites.</p><button class="big" style="width:100%" onclick="flip(true);openM('mAuth')">Sign in / Sign up</button>${CR}</div>`;
+ const m=pets.filter(p=>p.mine);return `<div class="own"><div class="av" style="width:60px;height:60px;font-size:1.4rem">${esc(me.name[0].toUpperCase())}</div><div><h2 class="fr">${esc(me.name)}</h2><div class="mute">${esc(me.e)}</div></div></div><b class="fr">My pets (${m.length})</b>
+ ${m.map(p=>`<div class="card2" style="display:flex;justify-content:space-between;align-items:center"><span>${CATS[p.c][0]} <b>${esc(p.n)}</b></span><button class="pill" onclick="del('${p.id}')">Mark adopted ✓</button></div>`).join('')||'<p class="mute">You haven’t posted any pets yet.</p>'}
+ <b class="fr" style="display:block;margin-top:16px">Messages (${inbox.length})</b>${inbox.map(x=>`<div class="card2"><b>${esc(x.from)}</b> about <b>${esc(x.pet)}</b><br>${esc(x.text)}<div class="mute">✉️ ${esc(x.email)}</div></div>`).join('')||'<p class="mute">No messages yet.</p>'}
+ <button class="big" style="width:100%;margin-top:14px;background:var(--card);border:2px solid var(--line);box-shadow:none" onclick="out()">Sign out</button>${CR}`}
+};
+function show(){$('scr').innerHTML=V[v]();if(v=='home')drawCards();
+ const N=[['home','🏠'],['chat','💬'],['plus','+'],['favs','♥'],['me','👤']];
+ $('nav').style.display=v=='welcome'?'none':'flex';
+ $('nav').innerHTML=N.map(([k,i])=>k=='plus'?`<button class="plus fr" style="font-size:1.8rem" onclick="postBtn()">+</button>`:`<button class="${v==k||(v=='detail'&&k=='home')?'on':''}" onclick="nav('${k}')">${i}</button>`).join('');window.scrollTo(0,0)}
+async function nav(k){v=k;show();if(k=='me'&&me){await loadInbox();if(v=='me')show()}if(k=='chat'){await loadPosts();if(v=='chat')show()}}
+function start(){sv('pp2_seen',true);nav('home')}
+function openPet(id){sel=id;nav('detail')}
+function fmt(d){try{return new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}catch(e){return ''}}
+const loadPets=async()=>{try{pets=(await api('/pets')).pets}catch(e){toast(e.message)}};
+const loadPosts=async()=>{try{posts=(await api('/posts')).posts}catch(e){}};
+const loadMe=async()=>{try{const j=await api('/me');me=j.user;favs=j.favs||[]}catch(e){me=null;favs=[]}};
+const loadInbox=async()=>{if(!me){inbox=[];return}try{inbox=(await api('/inbox')).messages}catch(e){}};
+async function init(){await Promise.all([loadMe(),loadPets(),loadPosts()]);await loadInbox();show()}
+const openM=id=>$(id).classList.add('open'),closeM=id=>$(id).classList.remove('open');
+function needLogin(msg){flip(true);$('aErr').textContent=msg;openM('mAuth')}
+function flip(r){signup=r?false:!signup;$('aN').style.display=signup?'block':'none';$('aT').textContent=signup?'Join the family 🐰':'Welcome back 🐱';$('aGo').textContent=signup?'Create account':'Sign in';$('aSw').textContent=signup?'Have an account? Sign in':'New here? Create account';$('aErr').textContent=''}
+async function fav(id){if(!me)return needLogin('Sign in to save favourites ♥');try{favs=(await api('/favs/'+id,'POST',{})).favs}catch(e){return toast(e.message)}v=='home'?drawCards():show()}
+function contact(id){if(!me)return needLogin('Please sign in to message the owner 💛');const p=pets.find(x=>x.id==id);if(p&&p.mine)return toast('That’s your own pet 😄');msgPet=id;$('mT').value='';$('mErr').textContent='';openM('mMsg')}
+async function sendMsg(){const t=$('mT').value.trim();if(!t){$('mErr').textContent='Write a short message first 🐾';return}try{await api('/pets/'+msgPet+'/messages','POST',{text:t});closeM('mMsg');toast('Message sent! 💌')}catch(e){$('mErr').textContent=e.message}}
+async function auth(){const email=$('aE').value.trim().toLowerCase(),password=$('aP').value,name=$('aN').value.trim();
+ if(!/^\S+@\S+\.\S+$/.test(email)||password.length<8){$('aErr').textContent='Enter a valid email and a password of 8+ characters.';return}
+ if(signup&&!name){$('aErr').textContent='Please add your name.';return}
+ try{await api(signup?'/signup':'/login','POST',{email,password,name});await Promise.all([loadMe(),loadPets(),loadInbox()]);closeM('mAuth');$('aP').value='';toast('Welcome, '+me.name+' 🐾');show()}catch(x){$('aErr').textContent=x.message}}
+async function out(){try{await api('/logout','POST',{})}catch(e){}me=null;favs=[];inbox=[];await loadPets();nav('home')}
+function postBtn(){if(!me)return needLogin('Please sign in to post a pet 💛');$('pC').innerHTML=Object.entries(CATS).map(([k,x])=>`<option value="${k}">${x[0]} ${x[1]}</option>`).join('');$('pErr').textContent='';openM('mPost')}
+function resize(f){return new Promise(r=>{const i=new Image();i.onload=()=>{const s=Math.min(1,500/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.7))};i.onerror=()=>r(null);i.src=URL.createObjectURL(f)})}
+async function savePet(){
+ const n=$('pN').value.trim(),l=$('pL').value.trim();if(!n||!l){$('pErr').textContent='Name and location please 🐾';return}
+ const f=$('pF').files[0];let image=null;if(f){image=await resize(f);if(!image){$('pErr').textContent='Couldn’t read that photo.';return}}
+ try{await api('/pets','POST',{name:n,cat:$('pC').value,gender:$('pG').value,type:$('pT').value,price:$('pPr').value,age:$('pA').value,weight:$('pW').value,location:l,desc:$('pD').value,image});
+  await loadPets();closeM('mPost');['pN','pPr','pL','pD','pF','pA','pW'].forEach(i=>$(i).value='');toast('Posted! 🎉');cat='all';typ='all';nav('home')}catch(e){$('pErr').textContent=e.message}}
+async function del(id){try{await api('/pets/'+id,'DELETE');await Promise.all([loadPets(),loadInbox()]);toast('Marked as adopted 🏡');show()}catch(e){toast(e.message)}}
+async function addPost(){if(!me)return needLogin('Sign in to join the chat 💬');const x=$('pt').value.trim();if(!x)return;try{await api('/posts','POST',{c:cc,text:x});await loadPosts();show()}catch(e){toast(e.message)}}
+show();init();
+</script></body></html>
